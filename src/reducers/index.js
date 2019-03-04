@@ -1,5 +1,5 @@
-import { MOVE_OBJECTS } from '../actions';
-import moveObjects from './moveObjects';
+import { MOVE_OBJECTS } from '../actions'
+import moveObjects from './moveObjects'
 
 const initialState = {
   angle: 45,
@@ -8,10 +8,10 @@ const initialState = {
 function reducer(state = initialState, action) {
   switch (action.type) {
     case MOVE_OBJECTS:
-      return moveObjects(state, action);
+      return moveObjects(state, action)
     default:
-      return state;
+      return state
   }
 }
 
-export default reducer;
+export default reducer

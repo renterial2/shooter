@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { pathFromBezierCurve } from '../utils/formulas';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { pathFromBezierCurve } from '../utils/formulas'
 
 const CannonPipe = (props) => {
   const cannonPipeStyle = {
@@ -8,12 +8,12 @@ const CannonPipe = (props) => {
     stroke: '#666',
     strokeWidth: '2px',
   };
-  const transform = `rotate(${props.rotation}, 0, 0)`;
+  const transform = `rotate(${props.rotation}, 0, 0)`
 
-  const muzzleWidth = 40;
-  const halfMuzzle = 20;
-  const height = 100;
-  const yBasis = 70;
+  const muzzleWidth = 40
+  const halfMuzzle = 20
+  const height = 100
+  const yBasis = 70
 
   const cubicBezierCurve = {
     initialAxis: {
@@ -55,4 +55,4 @@ CannonPipe.propTypes = {
   rotation: PropTypes.number.isRequired,
 };
 
-export default CannonPipe;
+export default CannonPipe
