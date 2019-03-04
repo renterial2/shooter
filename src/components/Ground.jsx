@@ -32,4 +32,4 @@ const Ground = () => {
   );
 };
 
-export default Ground;
+export default Ground
