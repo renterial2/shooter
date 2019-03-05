@@ -1,7 +1,7 @@
 export const pathFromBezierCurve = (cubicBezierCurve) => {
     const {
       initialAxis, initialControlPoint, endingControlPoint, endingAxis,
-    } = cubicBezierCurve;
+    } = cubicBezierCurve
     return `
       M${initialAxis.x} ${initialAxis.y}
       c ${initialControlPoint.x} ${initialControlPoint.y}
@@ -38,4 +38,16 @@ export const getCanvasPosition = (event) => {
   point.y = event.clientY
   const { x, y } = point.matrixTransform(svg.getScreenCTM().inverse())
   return {x, y}
+}
+
+const degreesToRadian = degrees => ((degrees * Math.PI) / 180)
+
+export const calculateNextPosition = (x, y, angle, divisor = 300) => {
+  const realAngle = (angle * -1) + 90
+  const stepsX = radiansToDegrees(Math.cos(degreesToRadian(realAngle))) / divisor
+  const stepsY = radiansToDegrees(Math.sin(degreesToRadian(realAngle))) / divisor
+  return {
+    x: x +stepsX,
+    y: y - stepsY,
+  }
 }
